@@ -1,0 +1,72 @@
+﻿@model List<Car>
+
+	<html>
+		<head>
+			<title>
+				Cars List
+			</title>
+			<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css"/>
+		</head>
+		<body>
+			<table class="table tbl-primary">
+				<thead>
+					<tr>
+						
+				<th>
+					Car ID
+				</th>
+
+				<th>
+					Owner Name
+				</th>
+
+				<th>
+					Car Name
+				</th>
+
+				<th>
+					Car Model Year
+				</th>
+
+				<th>
+					Fuel Type
+				</th>
+
+				<th>
+				    Insurance Expiry Year
+				</th>
+				<th>
+					Action
+				</th>
+				<th>
+					Action
+				</th>
+				
+			</tr>
+				</thead>
+
+				<tbody>
+			@{
+				foreach (Car car in Model)
+
+				{
+					<tr>
+						<td>@car.Id</td>
+						<td>@car.OwnerName</td>
+						<td>@car.CarName</td>
+						<td>@car.CarModelYear</td>
+						<td>@car.FuelType</td>
+						<td>@car.CarInsuranceYear</td>
+						<td><a asp-action="Update" asp-controller="Car" asp-route-id="@car.Id">Update</a></td>
+						<td><a asp-action="Delete" asp-controller="Car" asp-route-id="@car.Id">Delete</a></td>
+					</tr>
+				}
+			}
+				
+				</tbody>
+
+			</table>
+
+			<a asp-action="Create" asp-controller="Car">Add New Record</a>
+		</body>
+	</html>

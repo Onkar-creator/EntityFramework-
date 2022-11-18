@@ -1,0 +1,17 @@
+﻿@model Car
+
+
+<form method="post" asp-action="Update" asp-controller="Car">
+
+	Owner Name: <input type="text" asp-for="@Model.OwnerName" /><br />
+
+	Car Name: <input type="text" asp-for="@Model.CarName" /><br />
+
+	Car Model Year: <input type="text" asp-for="@Model.CarModelYear" /><br />
+
+	Fuel Type: <input type="text" asp-for="@Model.FuelType" /><br />
+
+	Insuance Expiry Year: <input type="text" asp-for="@Model.CarInsuranceYear" /><br />
+	<button>Submit</button>
+
+</form>
